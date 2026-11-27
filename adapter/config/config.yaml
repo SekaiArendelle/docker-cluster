@@ -18,7 +18,7 @@ slurm:
 
 # module profile文件路径
 modulepath:
-  path: /gpfs/share/software/module/init/profile.sh
+  path: /data/software/module/init/profile.sh
 
 # 计算分区描述（显示在 SCOW 门户的分区选择中）
 partitiondesc:
