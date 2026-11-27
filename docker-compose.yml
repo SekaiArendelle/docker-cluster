@@ -64,6 +64,7 @@ services:
       - etc_slurm:/etc/slurm
       - slurm_jobdir:/data
       - var_log_slurm:/var/log/slurm
+      - ./supervisor/slurmctld_supervisord.conf:/etc/supervisor/conf.d/slurmctld_supervisord.conf:ro
       - ./adapter:/adapter
     expose:
       - "6817"
@@ -91,6 +92,7 @@ services:
       - etc_slurm:/etc/slurm
       - slurm_jobdir:/data
       - var_log_slurm:/var/log/slurm
+      - ./supervisor/slurmd_supervisord.conf:/etc/supervisor/conf.d/slurmd_supervisord.conf:ro
     expose:
       - "6818"
     depends_on:
@@ -110,6 +112,7 @@ services:
       - etc_slurm:/etc/slurm
       - slurm_jobdir:/data
       - var_log_slurm:/var/log/slurm
+      - ./supervisor/slurmd_supervisord.conf:/etc/supervisor/conf.d/slurmd_supervisord.conf:ro
       - /root/.ssh/authorized_keys:/root/.ssh/authorized_keys
     expose:
       - "6818"
