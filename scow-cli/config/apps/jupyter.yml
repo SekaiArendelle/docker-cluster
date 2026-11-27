@@ -9,6 +9,15 @@ logoPath: apps/jupyter.png
 # 指定应用类型为web
 type: web
 
+# 默认资源：4 核 / 8GB，且不占用 GPU。
+# 注意：创建页面的「单节点GPU卡数」字段会被下面 --gres=gpu:0 覆盖；
+# 需要 GPU 时在「其他sbatch参数」里填 --gres=gpu:1（后写的选项优先生效）。
+slurm:
+  options:
+    - "--gres=gpu:0"
+    - "--cpus-per-task=4"
+    - "--mem=8G"
+
 # Web应用的配置
 web:
   # 准备脚本
@@ -51,4 +60,4 @@ attributes:
     name: sbatchOptions
     label: 其他sbatch参数
     required: false
-    placeholder: "比如：--time 10"
+    placeholder: "需要 GPU 填 --gres=gpu:1；要更多核填 --cpus-per-task=8 --mem=16G"

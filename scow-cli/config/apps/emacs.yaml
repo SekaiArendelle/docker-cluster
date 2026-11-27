@@ -9,6 +9,13 @@ logoPath: apps/emacs.png
 # 指定应用类型，vnc或者web
 type: vnc
 
+# 默认资源：1 核 / 2GB，不占用 GPU
+slurm:
+  options:
+    - "--gres=gpu:0"
+    - "--cpus-per-task=1"
+    - "--mem=2G"
+
 # 可以运行这个应用的节点地址
 # 如果不设置nodes，则所有节点都可以运行
 # nodes:
