@@ -20,3 +20,9 @@ slurm:
 modulepath:
   path: /gpfs/share/software/module/init/profile.sh
 
+# 计算分区描述（显示在 SCOW 门户的分区选择中）
+partitiondesc:
+  - name: normal
+    desc: "CPU 分区：d510 物理机 20 核（8 P-core + 12 E-core），30GB 内存"
+  - name: gpu
+    desc: "GPU 分区：d510 物理机 NVIDIA GeForce RTX 4090 D，24GB 显存"

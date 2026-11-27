@@ -64,6 +64,7 @@ services:
       - etc_slurm:/etc/slurm
       - slurm_jobdir:/data
       - var_log_slurm:/var/log/slurm
+      - ./adapter:/adapter
     expose:
       - "6817"
       - "8999"
@@ -81,6 +82,10 @@ services:
     hostname: c1
     privileged: true
     container_name: c1
+    # expose the host GPU (d510 RTX 4090) to the compute node
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
     volumes:
       - etc_munge:/etc/munge
       - etc_slurm:/etc/slurm
