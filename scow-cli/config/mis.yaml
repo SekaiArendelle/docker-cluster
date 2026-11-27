@@ -76,3 +76,8 @@ predefinedChargingTypes:
     # url: ""
     # iconPath: ""
     # allowedRoles: []
+
+# 账户名规则：与 Slurm 适配器校验保持一致（适配器只接受 ^[a-z0-9_]+$）
+accountNamePattern:
+  regex: "^[a-z0-9_]+$"
+  errorMessage: 账户名只能包含小写字母、数字和下划线
